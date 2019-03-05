@@ -386,7 +386,7 @@ nav {
       height: 150%;
       width: 150%;
       margin: 0;
-      background: url(".connectedbycolor/dist/media/hero.jpg");
+      background: url("/connectedbycolor/dist/media/hero.jpg");
       background-size: cover;
       background-position: center -280px;
       background-attachment: fixed;
