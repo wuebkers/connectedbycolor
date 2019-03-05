@@ -1,0 +1,152 @@
+.home {
+	position: relative;
+
+	.hero {
+		height: 95vh;
+		width: 100vw;
+		position: relative;
+		overflow: hidden;
+	
+		&__media {
+			position: absolute;
+			top: -25%;
+			left: -25%;
+			height: 150%;
+			width: 150%;
+			margin: 0;
+			background: url('/dist/media/hero.jpg');
+			background-size: cover;
+			background-position: center -280px;
+			background-attachment: fixed;
+			transform-origin: center;
+			pointer-events: none;
+
+			&::after {
+				content: '';
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				background: rgba(0, 0, 0, .5);
+			}
+
+			@media screen and (max-width: 768px) {
+				background-attachment: unset;
+			}
+		}
+
+		&__title {
+			position: absolute;
+			bottom: 50px;
+			z-index: 1;
+			color: #fff;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+			font-size: 120px;
+			font-weight: 300;
+			line-height: 1.3;
+			letter-spacing: -5px;
+			white-space: nowrap;
+
+			small {
+				display: block;
+				font-size: 20px;
+				letter-spacing: 0;
+				font-style: normal;
+			}
+
+			@media screen and (max-width: 700px) {
+				font-size: 80px;
+			}
+
+			@media screen and (max-width: 465px) {
+				font-size: 60px;
+			}
+
+			@media screen and (max-width: 350px) {
+				font-size: 50px;
+			}
+		}
+	}
+
+	.info {
+		max-width: 900px;
+		margin: 100px auto;
+		padding: 50px;
+		background: #f1f1f1;
+
+		&__copy {
+			text-align: center;
+			padding: 0 50px;
+			font-size: 18px;
+			font-weight: 300;
+
+			span {
+				display: block;
+			}
+		}
+	}
+
+	.travel {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&__copy {
+			margin: 0 auto;
+			max-width: 800px;
+			text-align: center;
+			padding: 0 20px;
+			font-size: 18px;
+			font-weight: 300;
+		}
+	}
+
+	.button {
+		font-family: 'open sans', sans-serif;
+		padding: 15px 25px;
+		background: #4267b2;
+		border: 3px solid #4267b2;
+		color: #FFF;
+		text-transform: uppercase;
+		letter-spacing: -.5px;
+		margin: 30px auto 0;
+		text-align: center;
+		display: inline-block;
+		left: 50%;
+		transition: all .3s;
+		font-weight: 600;
+
+		&[disabled] {
+			border: 0;
+			background: #e6e6e6;
+			cursor: not-allowed;
+
+			&:hover {
+				background: #e6e6e6;
+			}
+		}
+
+		&:hover {
+			background: transparent;
+			color: #4267b2; 
+			text-decoration: none;
+		}
+	}
+
+	.footer {
+		padding: 10px 50px;
+		
+		p {
+			max-width: 800px;
+			font-size: 10px;
+			line-height: 18px;
+			letter-spacing: 0;
+			margin: 0 auto;
+			text-align: center;
+
+		}
+	}
+}

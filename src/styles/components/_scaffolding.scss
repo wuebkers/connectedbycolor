@@ -1,0 +1,12 @@
+body {
+	background-color: #fcfcfc;
+	background-image: url("https://www.transparenttextures.com/patterns/fake-luxury.png");
+}
+
+section {
+	padding: 100px 0;
+
+	@media screen and (max-width: 700px) {
+		padding: 50px 0;
+	}
+}
