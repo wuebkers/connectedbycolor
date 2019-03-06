@@ -379,6 +379,9 @@ nav {
     width: 100vw;
     position: relative;
     overflow: hidden; }
+    @media screen and (max-width: 768px) {
+      .home .hero {
+        height: 60vh; } }
     .home .hero__media {
       position: absolute;
       top: -25%;
@@ -386,7 +389,7 @@ nav {
       height: 150%;
       width: 150%;
       margin: 0;
-      background: url("/connectedbycolor/dist/media/hero.jpg");
+      background: url("/dist/media/hero.jpg");
       background-size: cover;
       background-position: center -280px;
       background-attachment: fixed;
@@ -404,7 +407,8 @@ nav {
         background: rgba(255, 255, 255, 0.7); }
       @media screen and (max-width: 768px) {
         .home .hero__media {
-          background-attachment: unset; } }
+          background-attachment: unset;
+          background-position: center; } }
     .home .hero img {
       position: absolute;
       z-index: 1;
@@ -419,11 +423,18 @@ nav {
     margin: 100px auto;
     padding: 50px;
     background: #f1f1f1; }
+    @media screen and (max-width: 768px) {
+      .home .info {
+        padding: 50px 0;
+        margin: 15px 15px 50px; } }
     .home .info__copy {
       text-align: center;
       padding: 0 50px;
       font-size: 18px;
       font-weight: 300; }
+      @media screen and (max-width: 768px) {
+        .home .info__copy {
+          padding: 0 20px; } }
       .home .info__copy span {
         display: block; }
   .home .travel {

@@ -6,6 +6,10 @@
 		width: 100vw;
 		position: relative;
 		overflow: hidden;
+
+		@media screen and (max-width: 768px) {
+			height: 60vh;
+		}
 	
 		&__media {
 			position: absolute;
@@ -14,7 +18,7 @@
 			height: 150%;
 			width: 150%;
 			margin: 0; 
-			background: url('/connectedbycolor/dist/media/hero.jpg');
+			background: url('/dist/media/hero.jpg');
 			background-size: cover;
 			background-position: center -280px;
 			background-attachment: fixed;
@@ -33,6 +37,7 @@
 
 			@media screen and (max-width: 768px) {
 				background-attachment: unset;
+				background-position: center;
 			}
 		}
 
@@ -52,11 +57,20 @@
 		padding: 50px;
 		background: #f1f1f1;
 
+		@media screen and (max-width: 768px) {
+			padding: 50px 0;
+			margin: 15px 15px 50px;
+		}
+
 		&__copy {
 			text-align: center;
 			padding: 0 50px;
 			font-size: 18px;
 			font-weight: 300;
+
+			@media screen and (max-width: 768px) {
+				padding: 0 20px;
+			}
 
 			span {
 				display: block;
