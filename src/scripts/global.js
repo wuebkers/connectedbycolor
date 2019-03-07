@@ -13,12 +13,6 @@ class Global {
 				$('.hero__media').attr('style', 'filter: blur(' + scrollPercent + 'px); background-size: ' + scalePercent + '% auto');
 			}
 		});
-
-		$(window).on('keyup', function() {
-			var val = $('.donate-amount').val()*100
-
-			$('.form-button').attr('data-amount', val);
-		});
 	}	
 }
 
