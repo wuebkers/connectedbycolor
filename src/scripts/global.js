@@ -14,15 +14,11 @@ class Global {
 			}
 		});
 
-		var galleryOpts = {
-			// Whether pressing the arrow keys should move to the next/previous slide.
-			arrowNavigation: true
-		};
+		$(window).on('keyup', function() {
+			var val = $('.donate-amount').val()*100
 
-		new LuminousGallery(
-      document.querySelectorAll(".photos__photo"),
-      galleryOpts
-    );
+			$('.form-button').attr('data-amount', val);
+		});
 	}	
 }
 

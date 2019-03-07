@@ -30,3 +30,24 @@ p {
 	font-weight: 300;
 	letter-spacing: -.5px;
 }
+
+input {
+	font-family: 'Open Sans', sans-serif;
+	padding: 5px 15px;
+	margin-bottom: 10px;
+}
+
+label {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	line-height: 18px;
+	margin: 0 5px 0 0; 
+}
+
+form {
+	.form-button {
+		margin: 10px 0 0 !important;
+		width: 100% !important;
+		display: block;
+	}
+}

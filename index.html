@@ -33,6 +33,7 @@
 
 	<link rel="stylesheet" type="text/css" href="./dist/bundle.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Space+Mono" rel="stylesheet">
+
 </head>
 <body class="home">
 	<main>
@@ -69,18 +70,37 @@
 		<section class="donations">
 			<h2 class="donations__title">Dontate</h2>
 			<p class="donations__copy">Solicited funds collected by Connected by Color will help cover our personal traveling expenses, establish an annual scholarship that will help local teens embark on their missionary desires as well, and benefit the Haitian communities by donating to the construction of fresh water wells in their neighborhoods. We are raising money to focus on these three pillars of our foundation. We hope you love our mission and our pillars and wish to contribute to our cause. We have big dreams for our foundation, and we understand that these dreams would not be possible without you. Thank you.</p>
-		
-			<form>
-				<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-					data-key="pk_live_hr2WSRyOGnuKJZSluZnh2KzT" data-amount="2500" data-name="Connected by Color"
-					data-description="Widget" data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-					data-locale="auto">
-					</script>
+
+			<form action="." method="post">
+				<label>$</label><input class="donate-amount" id="#stripeToken" value="" placeholder="25.00">
+
+				<noscript>You must <a href="http://www.enable-javascript.com" target="_blank">enable JavaScript</a> in your web browser in order to pay via Stripe.</noscript>
+			
+				<input type="submit" value="Donate" class="button form-button" data-key="pk_live_hr2WSRyOGnuKJZSluZnh2KzT" data-amount="2500" data-name="Connected by Color"data-description="One-time donation" data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto" />
+			
+				<script src="https://checkout.stripe.com/v2/checkout.js"></script>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+				<script>
+					$(document).ready(function () {
+						$(':submit').on('click', function (event) {
+							event.preventDefault();
+							var $button = $(this),
+								$form = $button.parents('form');
+							var opts = $.extend({}, $button.data(), {
+								token: function (result) {
+									$form.append($('<input>').attr({ type: 'hidden', name: 'stripeToken', value: result.id })).submit();
+								}
+							});
+							StripeCheckout.open(opts);
+						});
+					});
+				</script>
 			</form>
 		</section>
 	</main>
 	<footer>
 	</footer>
+	<script src="https://checkout.stripe.com/checkout.js"></script>
 	<script src="./dist/vendor.js"></script>
 	<script src="./dist/bundle.js"></script>
 </body>
